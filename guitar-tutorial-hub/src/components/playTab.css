@@ -1,0 +1,58 @@
+
+#youtube-video{
+    width: 70vw;
+    height: 81.5vh;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.play-container{
+    width: 100vw;
+    height: 90vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#queue{
+    width: 20vw;
+    height: 70.5vh;
+    background-color: rgba(0, 0, 0, 0.226);
+
+    padding: 1vh;
+
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.queue-item{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 19vw;
+    height: 5vh;
+    font-size: 0.8vw;
+}
+
+.deleteButton{
+    color: rgb(176, 40, 40) !important;
+    
+
+}
+
+#play-buttons{
+    width: 20vw;
+    height: 7vh;
+}
+
+#play-buttons h2{
+    width: 20vw;
+    height: 7vh;
+
+    background: rgba(118, 151, 118, 0.515);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
