@@ -9,9 +9,32 @@ import PlayTab from './components/playTab';
 
 function App() {
 
+  let [songs, setSongs] = React.useState([
+    {"Name": "Hey Jude", "id": "kNwoqVGabUY", "Difficulty": "B"},
+    {"Name": "House of the Rising Sun", "id": "MUT_EiuRW9I", "Difficulty": "D"},
+    {"Name": "City of Stars", "id": "SG8GJi1nihY", "Difficulty": "A"},
+    {"Name": "Paint It Black", "id": "YB64246t5i0", "Difficulty": "C"},
+    {"Name": "Take Me To Church", "id": "bPSvXc31A6U", "Difficulty": "S"},
+    {"Name": "Fly me to the Moon", "id": "YhJco3FwYOc", "Difficulty": "A"},
+    {"Name": "Just the Two of Us", "id": "1KcXQ9oCPDU", "Difficulty": "S"},
+    {"Name": "Come Along With Me", "id": "2xuCURstH_w", "Difficulty": "B"},
+    {"Name": "Let It Be", "id": "lKYQqVrnBsw", "Difficulty": "B"},
+    {"Name": "Imagine", "id": "NhVujencTRs", "Difficulty": "B"},
+    {"Name": "Oogway Ascends", "id": "euLkHYrEolU", "Difficulty": "A"},
+    {"Name": "Bohemian Rhapsody", "id": "ejHBHkNr-zY", "Difficulty": "A"},
+    {"Name": "Sweden", "id": "MPKOogJCCKU", "Difficulty": "B"},
+    {"Name": "Feel Good", "id": "pM1NQPLiWzk", "Difficulty": "A"},
+    {"Name": "Roundabout", "id": "yjA5Nm7Bq9M", "Difficulty": "A"},
+    {"Name": "Neon Genesis Evangelion", "id": "05rgMroLA_s", "Difficulty": "A"},
+    {"Name": "Rush E", "id": "tIIim_qzeb4", "Difficulty": "S"},
+    {"Name": "Howls Moving Castle", "id": "mB3lWr6iYmI", "Difficulty": "A"},
+    {"Name": "Careless Whisper", "id": "yCME7VQCMh4", "Difficulty": "A"},
+  ]);
+
   const [tab, setTab] = React.useState("Songs");
   const [activeSong, setActiveSong] = React.useState({});
   const [queue, setQueue] = React.useState([]);
+  const [playlists, setPlaylists] = React.useState([]);
 
   const opts = {
       height: '390',
@@ -26,6 +49,7 @@ function App() {
 
   function playSong(song){
     setTab("Play");
+    setQueue(queue => [song, ...queue]);
 
     setActiveSong(song);
     
@@ -61,6 +85,25 @@ function App() {
     }
   }
 
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    return array;
+}
+
+  function playPlaylist(playlist){
+
+    let songs = shuffleArray(playlist.Songs);
+    setQueue(songs);
+    setActiveSong(songs[0]);
+    setTab("Play")
+  }
+
 
   return (
     <div className="App">
@@ -74,7 +117,7 @@ function App() {
       <div id="site-content">
 
         <div className={`${tab === 'Songs' ? '' : 'hiddenTab'}`}>
-          <SongsTab addSongToQueue={addSongToQueue} playSong={playSong}></SongsTab>
+          <SongsTab playlists={playlists} setPlaylists={setPlaylists} songs={songs} addSongToQueue={addSongToQueue} playSong={playSong}></SongsTab>
         </div>
 
         <div className={`${tab === 'Play' ? '' : 'hiddenTab'}`}>
@@ -82,7 +125,7 @@ function App() {
         </div>
 
         <div className={`${tab === 'Playlists' ? '' : 'hiddenTab'}`}>
-          <PlaylistTab></PlaylistTab>
+          <PlaylistTab playPlaylist={playPlaylist} songs={songs} playlists={playlists} setPlaylists={setPlaylists}></PlaylistTab>
         </div>
         
       </div>

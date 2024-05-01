@@ -44,7 +44,7 @@
 
 #song-display-container{
     width: 50vw;
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,7 +55,10 @@
 #songs-container-left-content{
     width: 50vw;
     height: 90vh;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
 }
 
@@ -113,4 +116,27 @@ button:first-of-type {
 button:last-of-type {
     top: 100%;
     transform: translateY(-100%);
+}
+
+#sorting-options{
+    height: 10vh;
+    display: flex;
+    width: 20vw;
+
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.chosenClass{
+    background-color: rgb(94, 144, 94) !important;
+}
+
+.sortingChoice{
+    width: 5vw;
+    height: 4vh;
+    background-color: rgb(166, 94, 94);
+    border: solid black 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
