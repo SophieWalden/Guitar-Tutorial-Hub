@@ -29,6 +29,16 @@ function App() {
     {"Name": "Rush E", "id": "tIIim_qzeb4", "Difficulty": "S"},
     {"Name": "Howls Moving Castle", "id": "mB3lWr6iYmI", "Difficulty": "A"},
     {"Name": "Careless Whisper", "id": "yCME7VQCMh4", "Difficulty": "A"},
+    {"Name": "Somewhere Over The Rainbow", "id": "WuGh1Vre0VI", "Difficulty": "A"},
+    {"Name": "Renai Circulation", "id": "UuPgnkZ1f0I", "Difficulty": "A"},
+    {"Name": "Personal Jesus", "id": "2VqyBRXci5c", "Difficulty": "B"},
+    {"Name": "Super Mario Theme", "id": "JbSVVLdakDM", "Difficulty": "A"},
+    {"Name": "The Sound of Silence", "id": "JsGtpRhj82Y", "Difficulty": "B"},
+    {"Name": "Kill Bill", "id": "1b6pYbLe1gM", "Difficulty": "S"},
+    {"Name": "Stand By Me", "id": "RHaJ2D2rd6M", "Difficulty": "S"},
+    {"Name": "Fur Elise", "id": "9Ikb8QhVev0", "Difficulty": "A"},
+    {"Name": "Ratatouille", "id": "E2Tj_CQDrk4", "Difficulty": "S"},
+    {"Name": "Rise", "id": "6_AL6BFFl3E", "Difficulty": "S"},
   ]);
 
   const [tab, setTab] = React.useState("Songs");
