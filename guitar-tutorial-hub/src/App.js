@@ -108,7 +108,7 @@ function App() {
 
   function playPlaylist(playlist){
 
-    let songs = shuffleArray(playlist.Songs);
+    let songs = shuffleArray(structuredClone(playlist.Songs));
     setQueue(songs);
     setActiveSong(songs[0]);
     setTab("Play")

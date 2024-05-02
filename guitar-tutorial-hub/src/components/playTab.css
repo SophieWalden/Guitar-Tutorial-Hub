@@ -1,9 +1,10 @@
 
 #youtube-video{
-    width: 70vw;
-    height: 81.5vh;
+    width: 65vw;
+    height: 80vh;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .play-container{
@@ -18,32 +19,54 @@
 #queue{
     width: 20vw;
     height: 70.5vh;
-    background-color: rgba(0, 0, 0, 0.226);
+    background-color: #282828b9;
+    color: rgba(255, 255, 255, 0.633);
 
     padding: 1vh;
+    margin-bottom: 1vh;
 
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    overflow-y: auto; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .queue-item{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 19vw;
     height: 5vh;
     font-size: 0.8vw;
+
+    border-radius: 10px; /* Rounded corners for a softer look */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
-.deleteButton{
-    color: rgb(176, 40, 40) !important;
-    
+.queue-item:hover {
+    background-color: #3e3e3e; /* Slightly lighter on hover */
+}
 
+.deleteButton {
+    color: #ff6347; /* Tomato for delete button */
+    cursor: pointer; /* Cursor pointer for clickable items */
+    padding: 5px;
+    border-radius: 50%; /* Circle shape */
+    background: #222; /* Dark background for the button */
+}
+
+.deleteButton:hover {
+    background-color: #a13926; /* Highlight color on hover */
+    color: #b7b3b3;
 }
 
 #play-buttons{
     width: 20vw;
     height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
 }
 
 #play-buttons h2{
@@ -55,5 +78,13 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    border-radius: 10px;
+    cursor: pointer; /* Cursor pointer for clickable items */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for interactions */
+
 }
 
+#play-buttons h2:hover {
+    background-color: #36703d; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}

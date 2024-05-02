@@ -114,7 +114,7 @@ function SongsTab(props) {
                 <img src={`https://img.youtube.com/vi/${selectedSong['id']}/hqdefault.jpg`} id='song-thumbnail'></img>
                 
                 <div id='song-description'>
-                    <h2>{selectedSong['Name']}</h2>
+          
                 
                 </div>
 
@@ -132,7 +132,7 @@ function SongsTab(props) {
                 
                 {displayedSongs.map((song, index) => (
 
-                    <div key={index} className="song-item" onClick={() => setSelectedSong(song)}>
+                    <div key={index} className={`${selectedSong.id == song.id ? 'chosenClass' : ''} song-item`} onClick={() => setSelectedSong(song)}>
                         <p>{song.Name} (Difficulty: {song.Difficulty})</p>
                     </div>
                 ))}

@@ -16,9 +16,9 @@ function PlayTab(props) {
 
   function onEnd(event) {
     // Check if there are more songs in the queue
-    if (props.queue.length > 0) {
+    if (props.queue.length > 1) {
       // Remove the first song from the queue and set the next song as the current video
-      const nextSong = props.queue[0];
+      const nextSong = props.queue[1];
       props.queue.shift(); // Remove the first element from the queue
 
       if (nextSong.id === props.song.id) {
@@ -31,11 +31,19 @@ function PlayTab(props) {
     } 
   }
 
+  function playSong(song){
+    while (props.queue.length > 0 && props.queue[0].Name != song.Name){
+      props.queue.shift();
+    }
+
+    props.setActiveSong(song);
+  }
+
   return (
     <div className="play-container">
         
         <div id="play-left-side">
-           <YouTube key={playerKey} id="youtube-video" videoId={props.song["id"]} opts={opts} onReady={_onReady} onEnd={onEnd} />
+           <YouTube className={`${props.song["id"] != null ? '' : 'hiddenTab'}`} key={playerKey} id="youtube-video" videoId={props.song["id"]} opts={opts} onReady={_onReady} onEnd={onEnd} />
 
         </div>
         
@@ -46,7 +54,7 @@ function PlayTab(props) {
             <div id="queue-holder">
 
             {props.queue.map((song, index) => (
-              <div className="queue-item" key={index}>
+              <div className="queue-item" key={index} onClick={() => playSong(song)}>
                 <h2>{song.Name}</h2> <h3 className="deleteButton" onClick={() => props.removeSong(song)}>X</h3>
               </div>
             ))}
