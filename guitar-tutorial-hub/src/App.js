@@ -45,7 +45,7 @@ function App() {
     {"Name": "Wonder Egg Priority", "id": "bNBtJl95YuI", "Difficulty": "A"},
     {"Name": "Sword Art Online", "id": "rBufCkib-3I", "Difficulty": "A"},
     {"Name": "Blend S", "id": "w0SD6OsWTkI", "Difficulty": "S"},
-    {"Name": "Bocchi The Rock", "id": "Y0pORbwsec", "Difficulty": "S"},
+    {"Name": "Bocchi The Rock", "id": "-Y0pORbwsec", "Difficulty": "S"},
   
   ]);
 
