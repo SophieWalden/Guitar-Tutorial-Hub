@@ -39,6 +39,14 @@ function App() {
     {"Name": "Fur Elise", "id": "9Ikb8QhVev0", "Difficulty": "A"},
     {"Name": "Ratatouille", "id": "E2Tj_CQDrk4", "Difficulty": "S"},
     {"Name": "Rise", "id": "6_AL6BFFl3E", "Difficulty": "S"},
+    {"Name": "Lost Woods", "id": "D_U8b4FpnMQ", "Difficulty": "B"},
+    {"Name": "Death Note", "id": "Yb5cDnqlMQ0", "Difficulty": "A"},
+    {"Name": "No Game No Life", "id": "6yBnsktqZu4", "Difficulty": "S"},
+    {"Name": "Wonder Egg Priority", "id": "bNBtJl95YuI", "Difficulty": "A"},
+    {"Name": "Sword Art Online", "id": "rBufCkib-3I", "Difficulty": "A"},
+    {"Name": "Blend S", "id": "w0SD6OsWTkI", "Difficulty": "S"},
+    {"Name": "Bocchi The Rock", "id": "Y0pORbwsec", "Difficulty": "S"},
+  
   ]);
 
   const [tab, setTab] = React.useState("Songs");
